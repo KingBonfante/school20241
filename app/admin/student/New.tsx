@@ -22,7 +22,7 @@ export default function NewStudent() {
         <DialogHeader>
           <DialogTitle>Cadastrar Estudante</DialogTitle>
           <DialogDescription>
-           Inclua os dados do estudante e click em salvar.
+            Inclua os dados do estudante e click em salvar.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
@@ -43,7 +43,7 @@ export default function NewStudent() {
           <Button type="submit">Salvar</Button>
           <DialogClose asChild>
             <Button type="button" variant="secondary">
-             Fechar
+              Fechar
             </Button>
           </DialogClose>
         </DialogFooter>

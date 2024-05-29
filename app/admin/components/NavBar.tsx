@@ -21,8 +21,8 @@ export default function NavBar() {
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Avatar>
-                            <AvatarImage src="https://avatars.githubusercontent.com/u/81537071?v=4" alt="@shadcn" />
-                            <AvatarFallback>AJR</AvatarFallback>
+                            <AvatarImage src="https://avatars.githubusercontent.com/u/72134861?v=4" alt="@shadcn" />
+                            <AvatarFallback>LB</AvatarFallback>
                         </Avatar>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
