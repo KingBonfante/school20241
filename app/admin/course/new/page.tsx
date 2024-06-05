@@ -36,8 +36,10 @@ export default function saveCourse() {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(course)
         }
-        const response = await fetch("https://server20241.vercel.app/courses", requestOptions)
+       // for (let i = 0; i < 1000; i++) {
+        const response = await fetch("https://server20241-six.vercel.app/courses", requestOptions)
         form.reset();
+       // }        
         alert("Curso Cadastrado!")
     }
 
