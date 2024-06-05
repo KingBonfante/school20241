@@ -36,10 +36,8 @@ export default function saveCourse() {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(course)
         }
-       // for (let i = 0; i < 1000; i++) {
         const response = await fetch("https://server20241-six.vercel.app/courses", requestOptions)
         form.reset();
-       // }        
         alert("Curso Cadastrado!")
     }
 
@@ -53,7 +51,7 @@ export default function saveCourse() {
                         <FormItem>
                             <FormLabel>Nome:</FormLabel>
                             <FormControl>
-                                <Input placeholder="Digite o nome do estudante" {...field} />
+                                <Input placeholder="Digite o nome do curso" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
