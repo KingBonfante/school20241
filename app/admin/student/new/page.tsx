@@ -25,7 +25,7 @@ const FormSchema = z.object({
     }),
 })
 
-export default function saveStudent() {
+export default function SaveStudent() {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: { //valor que aparece por padrão
