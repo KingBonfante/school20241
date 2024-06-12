@@ -25,8 +25,12 @@ export default async function ListStudent() {
     return response.json();
   }
 
+  async function deleteStudent(formData: FormData) {
+    "use server"
+    const id = formData.get("id") as string;
+    const response = await fetch("https://server20241-six.vercel.app/students/"+id, {method: "DELETE"});
 
-  
+  }
 
   return (
     <Table>
@@ -47,8 +51,8 @@ export default async function ListStudent() {
             <TableCell>{item.email}</TableCell>
             <TableCell>
               <form>
-                <input type="text" name="id" hidden value={item.id} />
-                <Button formAction={deleteStudent} variant="destructive">Excluir</Button>
+                <input type="text" hidden name="id" value={item.id} />
+                <Button variant="destructive" formAction={deleteStudent}>Excluir</Button>
               </form>
             </TableCell>
           </TableRow>
