@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button"
 import {
     Table,
     TableBody,
@@ -23,6 +24,14 @@ import { revalidatePath } from "next/cache"
         return response.json();
     }
 
+    async function deleteCourse(formData: FormData) {
+      "use server"
+      const id = formData.get("id") as string;
+      const response = await fetch("https://server20241-six.vercel.app/courses/"+id, {method: "DELETE"});
+      revalidatePath("/admin/course")
+  
+    }
+
     return (
       <Table>
         <TableCaption>Lista de Cursos</TableCaption>
@@ -30,6 +39,7 @@ import { revalidatePath } from "next/cache"
           <TableRow>
             <TableHead className="w-[100px]">ID</TableHead>
             <TableHead>Nome</TableHead>
+            <TableHead>Ação</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -37,6 +47,12 @@ import { revalidatePath } from "next/cache"
             <TableRow key={item.id}>
               <TableCell className="font-medium">{item.id}</TableCell>
               <TableCell>{item.name}</TableCell>
+              <TableCell>
+              <form>
+                <input type="text" hidden name="id" value={item.id} />
+                <Button variant="destructive" formAction={deleteCourse}>EXCLUIR</Button>
+              </form>
+            </TableCell>
             </TableRow>
           ))}
         </TableBody>
