@@ -29,7 +29,6 @@ export default async function ListStudent() {
     "use server"
     const id = formData.get("id") as string;
     const response = await fetch("https://server20241-six.vercel.app/students/"+id, {method: "DELETE"});
-
   }
 
   return (
@@ -44,7 +43,7 @@ export default async function ListStudent() {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {students.map((item: IStudent) => (
+        {students.map((item:IStudent) => (
           <TableRow key={item.id}>
             <TableCell className="font-medium">{item.id}</TableCell>
             <TableCell>{item.name}</TableCell>
