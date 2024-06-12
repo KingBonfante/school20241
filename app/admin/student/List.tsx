@@ -52,7 +52,7 @@ export default async function ListStudent() {
             <TableCell>
               <form>
                 <input type="text" hidden name="id" value={item.id} />
-                <Button variant="destructive" formAction={deleteStudent}>Excluir</Button>
+                <Button variant="destructive" formAction={deleteStudent}>🗑️</Button>
               </form>
             </TableCell>
           </TableRow>
